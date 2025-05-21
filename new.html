@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My PHP Code Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for code blocks and general layout */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            /* Light gray background */
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .code-block {
+            background-color: #2d2d2d;
+            /* Dark background for code */
+            color: #f8f8f2;
+            /* Light text for code */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 0.9rem;
+            position: relative;
+            /* For copy button positioning */
+            margin-top: 1rem;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: #4a5568;
+            /* Dark gray button */
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            z-index: 10;
+            /* Ensure button is above code */
+        }
+
+        .copy-button:hover {
+            background-color: #2d3748;
+            /* Even darker gray on hover */
+        }
+
+        /* Style for the code itself within pre tags */
+        .code-block pre code {
+            display: block;
+            /* Ensures code takes full width and wraps */
+            white-space: pre-wrap;
+            /* Allows code to wrap */
+            word-break: break-all;
+            /* Breaks long words if necessary */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <div class="container">
+        <header class="text-center py-8">
+            <h1 class="text-4xl font-bold text-blue-700 mb-4">My PHP Code Bank</h1>
+            <p class="text-lg text-gray-600">
+                A collection of PHP code snippets for quick access during your online exam.
+                Simply click "Copy Code" to grab the snippet you need.
+            </p>
+        </header>
+
+        <!-- <section class="section-card">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4">1. Basic Hello World</h2>
+            <p class="mb-4 text-gray-700">A simple PHP script to print "Hello, World!" to the browser.</p>
+            <div class="code-block">
+                <button class="copy-button" onclick="copyCode(this)">Copy Code</button>
+                <pre><code id="php-code-1">&lt;?php
+    echo "Hello, World!";
+?&gt;</code></pre>
+            </div>
+        </section> -->
+
+        <!-- <section class="section-card">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4">2. Variable Declaration and Output</h2>
+            <p class="mb-4 text-gray-700">Demonstrates how to declare variables and output their values.</p>
+            <div class="code-block">
+                <button class="copy-button" onclick="copyCode(this)">Copy Code</button>
+                <pre><code id="php-code-2">&lt;?php
+    $name = "Alice";
+    $age = 30;
+
+    echo "My name is " . $name . " and I am " . $age . " years old.&lt;br&gt;";
+    echo "Using double quotes: \"My name is $name and I am $age years old.\"";
+?&gt;</code></pre>
+            </div>
+        </section> -->
+
+        <!-- <section class="section-card">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4">3. Conditional Statement (if-else)</h2>
+            <p class="mb-4 text-gray-700">An example of using an `if-else` statement to check a condition.</p>
+            <div class="code-block">
+                <button class="copy-button" onclick="copyCode(this)">Copy Code</button>
+                <pre><code id="php-code-3">&lt;?php
+    $score = 75;
+
+    if ($score &gt;= 60) {
+        echo "You passed the exam!";
+    } else {
+        echo "You did not pass the exam.";
+    }
+?&gt;</code></pre>
+            </div>
+        </section> -->
+
+        <!-- <section class="section-card">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4">4. Loop (for loop)</h2>
+            <p class="mb-4 text-gray-700">A `for` loop to iterate a specific number of times.</p>
+            <div class="code-block">
+                <button class="copy-button" onclick="copyCode(this)">Copy Code</button>
+                <pre><code id="php-code-4">&lt;?php
+    echo "Counting from 1 to 5:&lt;br&gt;";
+    for ($i = 1; $i &lt;= 5; $i++) {
+        echo "Number: " . $i . "&lt;br&gt;";
+    }
+?&gt;</code></pre>
+            </div>
+        </section> -->
+
+        <!-- <section class="section-card">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4">5. Simple Function</h2>
+            <p class="mb-4 text-gray-700">Defines and calls a simple function to perform an action.</p>
+            <div class="code-block">
+                <button class="copy-button" onclick="copyCode(this)">Copy Code</button>
+                <pre><code id="php-code-5">&lt;?php
+    function greet($name) {
+        return "Hello, " . $name . "!";
+    }
+
+    $userName = "Charlie";
+    echo greet($userName);
+?&gt;</code></pre>
+            </div>
+        </section> -->
+
+        <section class="section-card">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4">Database</h2>
+            <p class="mb-4 text-gray-700">
+                This code demonstrates a basic PHP login form that connects to a MySQL database
+                using PDO to verify user credentials.
+            </p>
+            <div class="code-block">
+                <button class="copy-button" onclick="copyCode(this)">Copy Code</button>
+                <pre><code id="php-code-6">&lt;html&gt;
+    &lt;head&gt;
+        &lt;!-- Head content can go here, e.g., title, meta tags, links to CSS --&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;form method="post"&gt;
+            &lt;center&gt;
+                Username:&lt;input type="text" name="txtusername" required&gt;
+                Password:&lt;input type="password" name="txtpassword" required&gt;
+                &lt;input type="submit" name="submit" value="Log in"&gt;
+                
+                &lt;?php
+                $uname="";
+                $pass="";
+                if(isset($_POST['submit']))
+                {
+                    $uname=$_POST['txtusername'];
+                    $pass=$_POST['txtpassword'];
+                    try
+                    {
+                        $pdo=new PDO('mysql:dbname=app1;host=localhost','root','');
+                        
+                    }
+                    catch (PDOException $e)
+                    {
+                        die("ERROR could not connect");
+                    }
+                    
+                    $sql="SELECT * FROM user1 WHERE username='$uname';";
+                    
+                    if($result=$pdo-&gt;query($sql))
+                    {
+                        $rowcount=$result-&gt;rowCount();
+                        if($rowcount&gt;0)
+                        {
+                            $row=$result-&gt;fetch();
+                            $username=$row['username'];
+                            $password=$row['password'];
+                            if($username==$uname &amp;&amp; $password==$pass)
+                            {
+                                echo"your login credintials were successfuly verified";
+                            }
+                            else
+                            {
+                                echo"your password is wrong";
+                            }
+                        }
+                        else
+                        echo"user does not exists";
+                    }
+                    else
+                    echo"ERROR";
+                }
+                unset($pdo);
+                ?&gt;
+            &lt;/center&gt;
+            
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4">Prime Number Finder</h2>
+            <p class="mb-4 text-gray-700">
+                This PHP script finds prime numbers within a specified range (between two input numbers).
+            </p>
+            <div class="code-block">
+                <button class="copy-button" onclick="copyCode(this)">Copy Code</button>
+                <pre><code id="php-code-7">&lt;html&gt;
+    &lt;head&gt;
+        &lt;!-- Head content can go here, e.g., title, meta tags, links to CSS --&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;form method="post"&gt;
+            &lt;center&gt;
+                Start Number:&lt;input type="number" name="txt1" required&gt;
+                End Number:&lt;input type="number" name="txt2" required&gt;
+                &lt;input type="submit" name="submit" value="Find Primes"&gt;
+            &lt;/center&gt;
+        &lt;/form&gt;
+        &lt;?php
+        if(isset($_POST['submit']))
+        {
+            if($_POST['txt1']!='' &amp;&amp; $_POST['txt2']!='')
+            {
+                $a=$_POST['txt1'];
+                $b=$_POST['txt2'];
+                $count=0;
+                echo "&lt;h3&gt;Prime numbers between $a and $b:&lt;/h3&gt;";
+                for($i=$a;$i&lt;$b;$i++)
+                {
+                    if($i==1)
+                    continue;
+                    $flag=0;
+                    for($j=2;$j&lt;$i;$j++)
+                    {
+                        if($i%$j==0)
+                        {
+                            $flag=1;
+                            break;
+                        }
+                    }
+                    if($flag==0)
+                    {
+                        $count++;
+                        echo"&lt;br/&gt;$i";
+                    }
+                }
+                echo"&lt;br/&gt;&lt;b&gt;Total primes found: &lt;/b&gt;",$count;
+            }
+            else
+            {
+                echo"&lt;p&gt;Please enter both start and end numbers.&lt;/p&gt;";
+                
+            }
+        }
+        ?&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4">GCD and LCM Calculator</h2>
+            <p class="mb-4 text-gray-700">
+                This PHP script calculates the Greatest Common Divisor (GCD) and Least Common Multiple (LCM)
+                of two numbers using functions.
+            </p>
+            <div class="code-block">
+                <button class="copy-button" onclick="copyCode(this)">Copy Code</button>
+                <pre><code id="php-code-8">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;GCD AND LCM&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;
+&lt;form method="POST"&gt;
+Enter First Number&lt;input type="text" name="num1" required&gt;&lt;br/&gt;&lt;br/&gt;
+Enter second Number&lt;input type="text" name="num2" required&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;input type="submit" name="submit" required&gt;&lt;br/&gt;&lt;br/&gt;
+&lt;?php
+if(isset($_POST['submit']))
+{
+	$num1=$_POST['num1'];
+	$num2=$_POST['num2'];
+	echo"you entered $num1 and $num2&lt;br/&gt;";
+	echo"The GCD of given numbers is ",getGCD($num1,$num2),"&lt;br/&gt;";
+	echo"The LCM of given numbers is ",getLCM($num1,$num2);
+}
+	function getGCD($a,$b)
+	{
+		if($b==0)
+			return $a;
+		else
+			return getGCD($b,$a%$b);
+	}
+	function getLCM($a,$b)
+	{
+		return ($a*$b)/getGCD($a,$b);
+	}
+
+?&gt;
+&lt;/form&gt;
+&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4">PHP Class with Constructor, Destructor, and Methods
+            </h2>
+            <p class="mb-4 text-gray-700">
+                This example demonstrates a basic PHP class (`Employee`) with a constructor,
+                destructor, and methods to calculate and display employee details.
+            </p>
+            <div class="code-block">
+                <button class="copy-button" onclick="copyCode(this)">Copy Code</button>
+                <pre><code id="php-code-9">&lt;?php
+class Employee
+{
+	public $eno;
+	public $ename;
+	public $salary;
+	public $hra;
+	public $da;
+	public $pf;
+	public $net;
+	
+	function __construct($no,$name,$sal)
+	{
+		echo"Object created for Employee No: $no&lt;br/&gt;";
+		$this-&gt;eno=$no;
+		$this-&gt;ename=$name;
+		$this-&gt;salary=$sal;
+	}
+	function display()
+	{
+		echo"Number of Employee: ",$this-&gt;eno,"&lt;br/&gt;";
+		echo"Name of Employee: ",$this-&gt;ename,"&lt;br/&gt;";
+		echo"Salary of Employee: ",$this-&gt;salary,"&lt;br/&gt;";
+		echo"HRA of Employee: ",$this-&gt;hra,"&lt;br/&gt;";
+		echo"DA of Employee: ",$this-&gt;da,"&lt;br/&gt;";
+		echo"PF of Employee: ",$this-&gt;pf,"&lt;br/&gt;";
+		echo"Net Salary of Employee: ",$this-&gt;net,"&lt;br/&gt;";
+	}
+	function cal()
+	{
+		$this-&gt;hra=0.20*$this-&gt;salary;
+		$this-&gt;da=0.70*$this-&gt;salary;
+		$this-&gt;pf=0.12*$this-&gt;salary;
+		$this-&gt;net=$this-&gt;salary+$this-&gt;hra+$this-&gt;da-$this-&gt;pf;
+	}
+	function __destruct()
+	{
+		echo"OBJECT DISTROYED for Employee No: ",$this-&gt;eno,"&lt;br/&gt;";
+	}
+}
+	$obj=new Employee(101,"Kavita",5000);
+	$obj-&gt;cal();
+	$obj-&gt;display();
+	unset($obj); // Explicitly destroy the object to call __destruct
+?&gt;</code></pre>
+            </div>
+        </section>
+
+        <script>
+            /**
+             * Copies the text content of the sibling `<code>` element to the clipboard.
+             * @param {HTMLElement} buttonElement The button element that was clicked.
+             */
+            function copyCode(buttonElement) {
+                const codeBlock = buttonElement.nextElementSibling; // Get the <pre><code> element
+                if (codeBlock && codeBlock.tagName === 'PRE') {
+                    const codeText = codeBlock.textContent;
+                    // Use document.execCommand('copy') for better compatibility in iframes
+                    const textarea = document.createElement('textarea');
+                    textarea.value = codeText;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    try {
+                        document.execCommand('copy');
+                        buttonElement.textContent = 'Copied!';
+                        setTimeout(() => {
+                            buttonElement.textContent = 'Copy Code';
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy text: ', err);
+                        buttonElement.textContent = 'Failed!';
+                    } finally {
+                        document.body.removeChild(textarea);
+                    }
+                }
+            }
+        </script>
+    </div>
+</body>
+
+</html>
